@@ -6,7 +6,7 @@
 package Model;
 
 /**
- *
+ * Classe Triangle
  * @author Laura
  */
 public class Triangle extends Polygone
@@ -143,9 +143,13 @@ public class Triangle extends Polygone
         double Hauteur = segmentH.longueur();
         return (Base * Hauteur)/2;
         
-        
-        
+   
+    }
+    
+    public boolean estValide() {
       
+        return true;
+        
     }
 
     @Override

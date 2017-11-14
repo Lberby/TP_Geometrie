@@ -12,17 +12,35 @@ package Model;
 public abstract class Polygone {
     private int num;
     private String nom;
+    private Point[] points;
     
     public Polygone(){
         this.num =0 ;
         this.nom = "";
+        points = new Point[4];
+        for(int i=0;i<points.length;i++)
+        {
+            points[i] = new Point();
+                    
+        }      
     }
     
-    public Polygone(java.lang.String nom){
+    public Polygone(java.lang.String nom ,Point p1 ,Point p2){
         this.num =0;
         this.nom = nom;
+        points = new Point[2];
+        points[0] = p1;
+        points[1] = p2;     
     }
 
+    public Point[] getPoints() {
+        return points;
+    }
+
+    public void setPoint( int index, Point point1) {
+        points[index] = point1;
+    }
+    
     public int getNum() {
         return num;
     }
@@ -47,6 +65,7 @@ public abstract class Polygone {
     
     public abstract double perimetre();
     public abstract double aire();
+     
      
     @Override
     public String toString() {

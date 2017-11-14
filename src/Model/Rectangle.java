@@ -90,6 +90,28 @@ public class Rectangle extends Polygone{
         return res;
         
     }
+    
+    public boolean estValide(){
+        Segment s1 = new Segment(points[0], points[1]);
+        Segment s2 = new Segment(points[1], points[2]);
+        Segment s3 = new Segment(points[2], points[3]);
+        Segment s4 = new Segment(points[3], points[0]);
+        
+        double long1 = s1.longueur();
+        double long2 = s2.longueur();
+        double long3 = s3.longueur();
+        double long4 = s4.longueur();
+         
+       if((s1.estPerpendiculaire(s2)) && s3.estPerpendiculaire(s4) && (s2.estPerpendiculaire(s3))){
+           if(long1 == long3 && long2 == long4 ){
+               
+               return true;
+           }
+       }
+        
+        return false;
+       
+    }
 
     @Override
     public String toString() {

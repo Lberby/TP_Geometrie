@@ -9,7 +9,7 @@ package Model;
  *
  * @author Laura
  */
-public class Segment {
+public class Segment extends Polygone {
     private Point[] points;
 
     
@@ -40,8 +40,8 @@ public class Segment {
     
     public double longueur(){
          
-        double a = Math.abs((( points[1].getX() - points[0].getX())*(points[1].getX() + points[0].getX())));
-        double b = Math.abs((( points[1].getY() - points[0].getY())*(points[1].getY() + points[0].getY())));
+        double a = Math.abs((( points[1].getX() - points[0].getX())*(points[1].getX() - points[0].getX())));
+        double b = Math.abs((( points[1].getY() - points[0].getY())*(points[1].getY() - points[0].getY())));
         double longueur = Math.abs(Math.sqrt(a + b));
         return longueur;
     }
